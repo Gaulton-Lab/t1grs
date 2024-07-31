@@ -6,7 +6,7 @@
 This project provides a T1GRS Docker image that can be pulled from Docker Hub and run locally. The Docker image contains all necessary dependencies and test data to get started quickly.
 
 ## IMPORTANT
-Our GitHub repository doesn't include the data model due to its large size. However, you can find everything you need to run T1GRS, including the data model and test data, on our [DockerHub](https://hub.docker.com/repository/docker/kgaultonlab/t1grs).
+Our GitHub repository doesn't include the data model due to its large size. However, you can find everything you need to run T1GRS, including the data model and test data, on our [DockerHub](https://hub.docker.com/r/kgaultonlab/t1grs).
 ## Prerequisites
 
 - Docker installed on your local machine. You can download Docker from [here](https://www.docker.com/get-started).
