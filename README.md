@@ -1,5 +1,6 @@
 # T1GRS Docker Build and Run Guide
-![Alt text](images/T1GRS.png)
+<img src="t1grs.jpeg" alt="Description" width="500">
+
 ## Overview
 
 This project provides a T1GRS Docker image that can be pulled from Docker Hub and run locally. The Docker image contains all necessary dependencies and test data to get started quickly.
