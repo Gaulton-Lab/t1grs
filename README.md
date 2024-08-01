@@ -7,13 +7,18 @@ This project provides a T1GRS Docker image that can be pulled from Docker Hub an
 
 ## IMPORTANT
 Our GitHub repository doesn't include the data model due to its large size. However, you can find everything you need to run T1GRS, including the data model and test data, on our [DockerHub](https://hub.docker.com/r/kgaultonlab/t1grs).
-## Prerequisites
+
+## Step 1
+To run T1GRS, you first need to run the code in [extract-TOPMed-Michigan-HLA GitHub repository](https://github.com/Gaulton-Lab/extract-TOPMed-Michigan-HLA). These tools automate the process of extracting specific SNP variants from multiple VCF files (both TOPMed and Michigan HLA datasets) and combine these extracted variants into a single VCF file for further analysis. This combined VCF file is in the desired input format needed to run the code in this repository.
+
+## Step 2
+### Prerequisites
 
 - Docker installed on your local machine. You can download Docker from [here](https://www.docker.com/get-started).
 
-## Getting Started
+### Getting Started
 
-### Step 1: Pull the Docker Image
+### Pull the Docker Image
 
 First, pull the Docker image from Docker Hub:
 
@@ -21,7 +26,7 @@ First, pull the Docker image from Docker Hub:
 docker pull kgaultonlab/t1grs:latest
 ```
 
-### Step 2: Run the Docker Container
+### Run the Docker Container
 
 Run the Docker container using the image you pulled. All necessary data is already included in the image, so you do not need to mount any external volumes. Use the following script to run the container and execute the analysis:
 
