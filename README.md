@@ -1,5 +1,5 @@
 # T1GRS Docker Build and Run Guide
-<img src="t1grs.jpeg" alt="Description" width="500">
+<img src="t1grs.jpg" alt="Description" width="500">
 
 ## Overview
 
