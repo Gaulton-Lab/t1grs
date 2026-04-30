@@ -1,5 +1,9 @@
+<div align="center">
+
 # T1GRS Docker Build and Run Guide
-<img src="t1grs.jpg" alt="Description" width="500">
+<img src="t1grs.jpg" alt="Description" width="400">
+
+</div>
 
 ## Overview
 
@@ -59,6 +63,11 @@ docker rm t1grs_analysis_container
 ```
 
 Replace `/path/to/your/output/directory` with the actual path where you want to save the output file on your host machine.
+
+## Citation
+
+If you use this tool, please cite:
+McGrail, C., Sears, T.J., Griffin, E.N., Ghaben, A.L., Smadbeck, P., Flannick, J., Kudtarkar, P., Carter, H. & Gaulton, K. (2026). Genetic association and machine learning improve the prediction of type 1 diabetes risk. *Nature Genetics*. https://www.nature.com/articles/s41588-026-02578-y
 
 ### COPYRIGHT & LICENSE
 
