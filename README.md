@@ -27,7 +27,7 @@ To run T1GRS, you first need to run the code in [extract-TOPMed-Michigan-HLA Git
 First, pull the Docker image from Docker Hub:
 
 ```bash
-docker pull kgaultonlab/t1grs:latest
+docker pull kgaultonlab/t1d-grs-analysis-r3-catboost:latest
 ```
 
 ### Run the Docker Container
@@ -38,14 +38,16 @@ Run the Docker container using the image you pulled. All necessary data is alrea
 #!/bin/bash
 
 # Run the Docker container
-docker run --name t1grs_analysis_container kgaultonlab/t1grs:latest \
-  --vcf_path /data/T1GRS_test_data.vcf \
+docker run --name t1grs_analysis \
+  -v /path/to/your/data:/data \
+  kgaultonlab/t1d-grs-analysis-r3-catboost:latest \
+  --vcf_path /data/your_input.vcf \
   --r3_variants_path /data/T1GRS_allele_order.txt \
   --r2_snps_path /data/ALL5_199_TOPMED_SUSIE_HLA_T1D_signals_updateID_r3.vcf.alleles \
   --allele_order_path /data/ALL5_199_TOPMED_SUSIE_HLA_T1D_signals_updateID.vcf.alleles \
-  --xgb_all_model_path /data/ALL_NoPCs_Final.ubj \
-  --xgb_nohla_model_path /data/NOHLA_NoPCs_Final.ubj \
-  --xgb_hlaonly_model_path /data/HLA_ONLY_NoPCs_Final.ubj \
+  --catboost_all_model_path /data/ALL_No_PCS_catboost.ubj \
+  --catboost_nohla_model_path /data/NonHLA_No_PCS_catboost.ubj \
+  --catboost_hlaonly_model_path /data/HLA_No_PCS_catboost.ubj \
   --all_columns_path /data/ALL_columns.txt \
   --hla_columns_path /data/HLA_columns.txt \
   --nonhla_columns_path /data/nonHLA_columns.txt \
@@ -55,11 +57,11 @@ docker run --name t1grs_analysis_container kgaultonlab/t1grs:latest \
   --output_path /data/T1GRS_probabilities_r3.csv
 
 # Copy the output file from the container to the host directory
-docker cp t1grs_analysis_container:/data/T1GRS_probabilities_r3.csv /path/to/your/output/directory/T1GRS_probabilities_r3.csv
+docker cp t1grs_analysis:/data/T1GRS_probabilities_r3.csv /path/to/your/output/directory/T1GRS_probabilities_r3.csv
 
 # Stop and remove the container
-docker stop t1grs_analysis_container
-docker rm t1grs_analysis_container
+docker stop t1grs_analysis
+docker rm t1grs_analysis
 ```
 
 Replace `/path/to/your/output/directory` with the actual path where you want to save the output file on your host machine.
